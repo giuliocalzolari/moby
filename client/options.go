@@ -172,9 +172,9 @@ func WithTLSClientConfigFromEnv() Opt {
 				TLSClientConfig: tlsconfig.Options{
 					InsecureSkipVerify: os.Getenv(EnvTLSVerify) == "",
 				}
-			},
-			CheckRedirect: CheckRedirect,
+			}
 		}
+		
 		dockerCertPath := os.Getenv(EnvOverrideCertPath)
 		if dockerCertPath == "" {
 			return nil
